@@ -315,16 +315,27 @@ class Honnbucho(Koma):
         super().__init__(path, size, position, player_id)
 
     def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
         currentpos_x, currentpos_y = self.getPosition()
-        if abs(currentpos_y - nextpos_y) == abs(currentpos_x - nextpos_x):
-            return True
-        else:
+        a_x = currentpos_x - nextpos_x
+        a_y = currentpos_y - nextpos_y
+
+        if a_x == 0 and a_y == 0:
             return False
+        elif abs(a_x) != abs(a_y):
+            return False
+        else:
+            for koma in koma_list:
+                koma_x, koma_y = koma.getPosition()
+                b_x = currentpos_x - koma_x
+                b_y = currentpos_y - koma_y
+                if a_x == b_x and a_y == b_y and current_player == koma.getPlayerID():
+                    return False
+                elif a_x == b_x and a_y == b_y and current_player != koma.getPlayerID():
+                    return True
+                elif b_x != 0 and b_y != 0 and a_x / b_x == a_y / b_y and a_x / b_x > 1:
+                    return False
+
+            return True
 
 
 class Yakuinn(Koma):
@@ -336,9 +347,9 @@ class Yakuinn(Koma):
         a_x = currentpos_x - nextpos_x
         a_y = currentpos_y - nextpos_y
 
-        if a_x != 0 and a_y != 0:
+        if a_x == 0 and a_y == 0:
             return False
-        elif a_x == 0 and a_y == 0:
+        elif a_x != 0 and a_y != 0:
             return False
         else:
             for koma in koma_list:
