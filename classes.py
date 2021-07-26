@@ -338,6 +338,8 @@ class Yakuinn(Koma):
 
         if a_x != 0 and a_y != 0:
             return False
+        elif a_x == 0 and a_y == 0:
+            return False
         else:
             for koma in koma_list:
                 koma_x, koma_y = koma.getPosition()
