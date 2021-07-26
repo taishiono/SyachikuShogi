@@ -111,26 +111,39 @@ class Bann:
 
         return dst
 
-    def search_koma_by_eventPosition(self, event):
+    def key_event_handler(self, event):
         step = self._masu_size + self._line_size
 
         if event.x % step <= self._line_size or event.y % step <= self._line_size:  # Event position is on the lines.
             return 0, 0
         else:
+            x, y = int(event.x / step), int(event.y / step)
             if self.activated_koma is None:
-                x, y = int(event.x / step), int(event.y / step)
-
+                new_koma_list = []  # Activated koma will be removed.
                 for koma in self.koma_list:
                     koma_x, koma_y = koma.getPosition()
                     if x == koma_x and y == koma_y and self.current_player == koma.getPlayerID():
                         self.activated_koma = koma
-                        break
-
+                    else:
+                        new_koma_list.append(koma)
+                self.koma_list = new_koma_list
                 return 0, 0
-            else:  # Koma is already active, so update the koma's position according to the event.
-                x, y = int(event.x / step), int(event.y / step)
-                if self.activated_koma.movable(x, y):
+            else:  # Koma is already active, so update the koma's position according to the situation.
+                if self.activated_koma.movable(x, y, self.koma_list, self.current_player):
+                    # If there is another koma in the destination,
+                    # do nothing when the koma is current player's one.
+                    # remove the koma when it's next player's one.
+                    new_koma_list = []
+                    for koma in self.koma_list:
+                        koma_x, koma_y = koma.getPosition()
+                        if x == koma_x and y == koma_y and self.current_player != koma.getPlayerID():
+                            pass
+                        else:
+                            new_koma_list.append(koma)
+
                     self.activated_koma.setPosition((x, y))
+                    new_koma_list.append(self.activated_koma)
+                    self.koma_list = new_koma_list
                     self.activated_koma = None
 
                     # Change player
@@ -140,7 +153,9 @@ class Bann:
 
                     updated_bann = self.get_current_bann()
                     return 1, updated_bann
-                else:
+
+                else:  # Koma cannot move to the event position.
+                    self.koma_list.append(self.activated_koma)
                     self.activated_koma = None
                     return 0, 0
 
@@ -179,7 +194,7 @@ class Koma:
     def getPlayerID(self):
         return self.player_id
 
-    def movable(self, nextpos_x, nextpos_y):
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
         raise NotImplementedError
 
 
@@ -187,9 +202,13 @@ class Hira(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and currentpos_x == nextpos_x:
             return True
         else:
@@ -200,10 +219,16 @@ class Syuninn(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
-        if currentpos_y - nextpos_y == self.player_id * 2 and currentpos_x == nextpos_x:
+        currentpos_x, currentpos_y = self.getPosition()
+        if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
+            return True
+        elif currentpos_y - nextpos_y == - self.player_id and currentpos_x == nextpos_x:
             return True
         else:
             return False
@@ -213,10 +238,16 @@ class Kakaricho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
-        if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
+        currentpos_x, currentpos_y = self.getPosition()
+        if currentpos_y - nextpos_y <= self.player_id * 2 and currentpos_x == nextpos_x:
+            return True
+        elif currentpos_y - nextpos_y == - self.player_id and currentpos_x == nextpos_x:
             return True
         else:
             return False
@@ -226,9 +257,13 @@ class Kacho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
             return True
         elif currentpos_y - nextpos_y == - self.player_id and abs(currentpos_x - nextpos_x) == 1:
@@ -241,9 +276,13 @@ class Bucho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
             return True
         elif currentpos_y - nextpos_y == 0:
@@ -258,9 +297,13 @@ class Shacho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if abs(currentpos_y - nextpos_y) <= 1 and abs(currentpos_x - nextpos_x) <= 1:
             return True
         else:
@@ -271,9 +314,13 @@ class Honnbucho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if abs(currentpos_y - nextpos_y) == abs(currentpos_x - nextpos_x):
             return True
         else:
@@ -284,9 +331,13 @@ class Yakuinn(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y):
-        currentpos_x, currentpos_y = self.getPosition()
+    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+        for koma in koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
+                return False
 
+        currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == 0 or currentpos_x - nextpos_x == 0:
             return True
         else:

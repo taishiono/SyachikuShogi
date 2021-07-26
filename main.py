@@ -16,7 +16,7 @@ def ButtonPress1(event):
     global img_new
     global canvas
 
-    a = bann.search_koma_by_eventPosition(event)
+    a = bann.key_event_handler(event)
     if a[0] == 1:
         img_new = ImageTk.PhotoImage(image=Image.fromarray(a[1]))
         canvas.itemconfig(img_on_campus, image=img_new)
