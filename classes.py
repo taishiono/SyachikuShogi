@@ -111,7 +111,6 @@ class Bann:
 
         return dst
 
-
     def key_event_handler(self, event):
         step = self._masu_size + self._line_size
 
