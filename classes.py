@@ -103,13 +103,14 @@ class Bann:
 
         return dst
 
-    def get_current_bann(self):
+    def get_current_bann_img(self):
         bann_img = self.bann_img_generator()
         koma_img = self.koma_img_generator()
 
         dst = self.alphaCombine(bann_img, koma_img)
 
         return dst
+
 
     def key_event_handler(self, event):
         step = self._masu_size + self._line_size
@@ -119,7 +120,7 @@ class Bann:
         else:
             x, y = int(event.x / step), int(event.y / step)
             if self.activated_koma is None:
-                new_koma_list = []  # Activated koma will be removed.
+                new_koma_list = []  # Activated koma will be removed from koma_list.
                 for koma in self.koma_list:
                     koma_x, koma_y = koma.getPosition()
                     if x == koma_x and y == koma_y and self.current_player == koma.getPlayerID():
@@ -151,7 +152,7 @@ class Bann:
                     self.current_player = - player_tmp
                     print("Player {}'s turn!".format(self.current_player))
 
-                    updated_bann = self.get_current_bann()
+                    updated_bann = self.get_current_bann_img()
                     return 1, updated_bann
 
                 else:  # Koma cannot move to the event position.

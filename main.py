@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 from classes import Bann
 
 bann = Bann(masu_size=80, line_size=5)
-bann_img = bann.get_current_bann()
+bann_img = bann.get_current_bann_img()
 root = tk.Tk()
 imgTk = ImageTk.PhotoImage(image=Image.fromarray(bann_img))
 canvas = tk.Canvas(root, width=bann_img.shape[0], height=bann_img.shape[1])
