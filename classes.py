@@ -21,49 +21,52 @@ class Bann:
         self._masu_color = masu_color
 
         # Initialize koma.
-        self.koma_list = [
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 6), 1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 6), 1),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 8), 1),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 8), 1),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 8), 1),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 8), 1),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 8), 1),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 8), 1),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 8), 1),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 8), 1),
-            Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (1, 7), 1),
-            Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1),
-            Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 8), 1),
-            # ----------------------------- #
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 2), -1),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 2), -1),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 0), -1),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 0), -1),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 0), -1),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 0), -1),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 0), -1),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 0), -1),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 0), -1),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 0), -1),
-            Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (7, 1), -1),
-            Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (1, 1), -1),
-            Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 0), -1)
-        ]
+        # self.koma_list = [
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 6), 1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 6), 1),
+        #     Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 8), 1),
+        #     Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 8), 1),
+        #     Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 8), 1),
+        #     Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 8), 1),
+        #     Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 8), 1),
+        #     Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 8), 1),
+        #     Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 8), 1),
+        #     Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 8), 1),
+        #     Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (1, 7), 1),
+        #     Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1),
+        #     Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 8), 1),
+        #     # ----------------------------- #
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 2), -1),
+        #     Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 2), -1),
+        #     Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 0), -1),
+        #     Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 0), -1),
+        #     Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 0), -1),
+        #     Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 0), -1),
+        #     Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 0), -1),
+        #     Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 0), -1),
+        #     Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 0), -1),
+        #     Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 0), -1),
+        #     Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (7, 1), -1),
+        #     Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (1, 1), -1),
+        #     Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 0), -1)
+        # ]
+
+        self.koma_list = [Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1),
+                          Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (1, 1), -1)]
 
         # Initialize match.
         self.activated_koma = None
@@ -72,7 +75,7 @@ class Bann:
         self.current_player = random.choice(players)
         print("Player {}'s turn!".format(self.current_player))
 
-    def bann_img_generator(self):
+    def make_bann_img(self):
         bann_size = self._masu_size * self._masu_num + self._line_size * (self._masu_num + 1)
         bann = np.ones((bann_size, bann_size, 3), dtype=np.uint8) * BANN_LINE_BRIGHTNESS
 
@@ -84,7 +87,7 @@ class Bann:
 
         return bann
 
-    def koma_img_generator(self):
+    def make_koma_img(self):
         bann_size = self._masu_size * self._masu_num + self._line_size * (self._masu_num + 1)
         dst = np.zeros((bann_size, bann_size, 4), dtype=np.uint8)
 
@@ -104,12 +107,19 @@ class Bann:
         return dst
 
     def get_current_bann_img(self):
-        bann_img = self.bann_img_generator()
-        koma_img = self.koma_img_generator()
+        bann_img = self.make_bann_img()
+        koma_img = self.make_koma_img()
 
         dst = self.alphaCombine(bann_img, koma_img)
 
         return dst
+
+    def get_koma_by_position(self, x, y):
+        for koma in self.koma_list:
+            koma_x, koma_y = koma.getPosition()
+            if x == koma_x and y == koma_y:
+                return koma
+        return 0
 
     def key_event_handler(self, event):
         step = self._masu_size + self._line_size
@@ -119,31 +129,15 @@ class Bann:
         else:
             x, y = int(event.x / step), int(event.y / step)
             if self.activated_koma is None:
-                new_koma_list = []  # Activated koma will be removed from koma_list.
                 for koma in self.koma_list:
                     koma_x, koma_y = koma.getPosition()
                     if x == koma_x and y == koma_y and self.current_player == koma.getPlayerID():
                         self.activated_koma = koma
-                    else:
-                        new_koma_list.append(koma)
-                self.koma_list = new_koma_list
-                return 0, 0
-            else:  # Koma is already active, so update the koma's position according to the situation.
-                if self.activated_koma.movable(x, y, self.koma_list, self.current_player):
-                    # If there is another koma in the destination,
-                    # do nothing when the koma is current player's one.
-                    # remove the koma when it's next player's one.
-                    new_koma_list = []
-                    for koma in self.koma_list:
-                        koma_x, koma_y = koma.getPosition()
-                        if x == koma_x and y == koma_y and self.current_player != koma.getPlayerID():
-                            pass
-                        else:
-                            new_koma_list.append(koma)
 
+                return 0, 0
+            else:
+                if self.activated_koma.movable(x, y):
                     self.activated_koma.setPosition((x, y))
-                    new_koma_list.append(self.activated_koma)
-                    self.koma_list = new_koma_list
                     self.activated_koma = None
 
                     # Change player
@@ -194,7 +188,7 @@ class Koma:
     def getPlayerID(self):
         return self.player_id
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+    def movable(self, nextpos_x, nextpos_y):
         raise NotImplementedError
 
 
@@ -202,12 +196,7 @@ class Hira(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and currentpos_x == nextpos_x:
             return True
@@ -219,12 +208,7 @@ class Syuninn(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
             return True
@@ -238,14 +222,11 @@ class Kakaricho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
-        if currentpos_y - nextpos_y <= self.player_id * 2 and currentpos_x == nextpos_x:
+        if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) == 1:
+            return True
+        elif currentpos_y - nextpos_y == self.player_id * 2 and currentpos_x == nextpos_x:
             return True
         elif currentpos_y - nextpos_y == - self.player_id and currentpos_x == nextpos_x:
             return True
@@ -257,12 +238,7 @@ class Kacho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
             return True
@@ -276,16 +252,11 @@ class Bucho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
         if currentpos_y - nextpos_y == self.player_id and abs(currentpos_x - nextpos_x) <= 1:
             return True
-        elif currentpos_y - nextpos_y == 0:
+        elif currentpos_y - nextpos_y == 0 and abs(currentpos_x - nextpos_x) == 1:
             return True
         elif currentpos_y - nextpos_y == - self.player_id and currentpos_x == nextpos_x:
             return True
@@ -297,13 +268,10 @@ class Shacho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
-        for koma in koma_list:
-            koma_x, koma_y = koma.getPosition()
-            if koma_x == nextpos_x and koma_y == nextpos_y and current_player == koma.getPlayerID():
-                return False
-
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
+        if currentpos_y - nextpos_y == 0 and currentpos_x - nextpos_x == 0:
+            return False
         if abs(currentpos_y - nextpos_y) <= 1 and abs(currentpos_x - nextpos_x) <= 1:
             return True
         else:
@@ -314,55 +282,23 @@ class Honnbucho(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
-        a_x = currentpos_x - nextpos_x
-        a_y = currentpos_y - nextpos_y
-
-        if a_x == 0 and a_y == 0:
-            return False
-        elif abs(a_x) != abs(a_y):
-            return False
-        else:
-            for koma in koma_list:
-                koma_x, koma_y = koma.getPosition()
-                b_x = currentpos_x - koma_x
-                b_y = currentpos_y - koma_y
-                if a_x == b_x and a_y == b_y and current_player == koma.getPlayerID():
-                    return False
-                elif a_x == b_x and a_y == b_y and current_player != koma.getPlayerID():
-                    return True
-                elif b_x != 0 and b_y != 0 and a_x / b_x == a_y / b_y and a_x / b_x > 1:
-                    return False
-
+        if abs(currentpos_x - nextpos_x) > 0 and abs(currentpos_x - nextpos_x) == abs(currentpos_y - nextpos_y):
             return True
+        else:
+            return False
 
 
 class Yakuinn(Koma):
     def __init__(self, path, size, position, player_id):
         super().__init__(path, size, position, player_id)
 
-    def movable(self, nextpos_x, nextpos_y, koma_list, current_player):
+    def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
-        a_x = currentpos_x - nextpos_x
-        a_y = currentpos_y - nextpos_y
-
-        if a_x == 0 and a_y == 0:
-            return False
-        elif a_x != 0 and a_y != 0:
-            return False
-        else:
-            for koma in koma_list:
-                koma_x, koma_y = koma.getPosition()
-                b_x = currentpos_x - koma_x
-                b_y = currentpos_y - koma_y
-                if a_x == b_x and a_y == b_y and current_player == koma.getPlayerID():
-                    return False
-                elif a_x == b_x and a_y == b_y and current_player != koma.getPlayerID():
-                    return True
-                elif b_y != 0 and a_x == b_x and a_y / b_y > 1:
-                    return False
-                elif b_x != 0 and a_x / b_x > 1 and a_y == b_y:
-                    return False
-
+        if currentpos_y - nextpos_y == 0 and abs(currentpos_x - nextpos_x) > 0:
             return True
+        elif currentpos_x - nextpos_x == 0 and abs(currentpos_y - nextpos_y) > 0:
+            return True
+        else:
+            return False
