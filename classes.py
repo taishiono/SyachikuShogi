@@ -22,47 +22,47 @@ class Bann:
 
         # Initialize koma.
         self.koma_list = [
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 6), 1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 6), 1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 8), 1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 8), 1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 8), 1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 8), 1, exist=True),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 8), 1, exist=True),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 8), 1, exist=True),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 8), 1, exist=True),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 8), 1, exist=True),
-            Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (1, 7), 1, exist=True),
-            Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1, exist=True),
-            Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 8), 1, exist=True),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 6), 1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 6), 1, exist=True, nari_flag=False),
+            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 8), 1, exist=True, nari_flag=False),
+            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 8), 1, exist=True, nari_flag=False),
+            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 8), 1, exist=True, nari_flag=False),
+            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 8), 1, exist=True, nari_flag=False),
+            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 8), 1, exist=True, nari_flag=False),
+            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 8), 1, exist=True, nari_flag=False),
+            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 8), 1, exist=True, nari_flag=False),
+            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 8), 1, exist=True, nari_flag=False),
+            Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (1, 7), 1, exist=True, nari_flag=False),
+            Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1, exist=True, nari_flag=False),
+            Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 8), 1, exist=True, nari_flag=False),
             # ----------------------------- #
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (0, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (1, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (2, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (3, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (4, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (5, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (6, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (7, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_og.png"), masu_size, (8, 2), -1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (0, 0), -1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (8, 0), -1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (1, 0), -1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (7, 0), -1, exist=True),
-            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (2, 0), -1, exist=True),
-            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (6, 0), -1, exist=True),
-            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (3, 0), -1, exist=True),
-            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (5, 0), -1, exist=True),
-            Honnbucho(Path("./images/koma/honbucho_og.png"), masu_size, (7, 1), -1, exist=True),
-            Yakuinn(Path("./images/koma/yakuin_og.png"), masu_size, (1, 1), -1, exist=True),
-            Shacho(Path("./images/koma/syacho_og.png"), masu_size, (4, 0), -1, exist=True)
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (0, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (1, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (2, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (3, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (4, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (5, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (6, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (7, 2), -1, exist=True, nari_flag=False),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (8, 2), -1, exist=True, nari_flag=False),
+            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (0, 0), -1, exist=True, nari_flag=False),
+            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (8, 0), -1, exist=True, nari_flag=False),
+            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (1, 0), -1, exist=True, nari_flag=False),
+            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (7, 0), -1, exist=True, nari_flag=False),
+            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (2, 0), -1, exist=True, nari_flag=False),
+            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (6, 0), -1, exist=True, nari_flag=False),
+            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (3, 0), -1, exist=True, nari_flag=False),
+            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (5, 0), -1, exist=True, nari_flag=False),
+            Honnbucho(Path("./images/koma/honbucho_og.png"), masu_size, (7, 1), -1, exist=True, nari_flag=False),
+            Yakuinn(Path("./images/koma/yakuin_og.png"), masu_size, (1, 1), -1, exist=True, nari_flag=False),
+            Shacho(Path("./images/koma/syacho_og.png"), masu_size, (4, 0), -1, exist=True, nari_flag=False)
         ]
 
         # Initialize match.
@@ -189,6 +189,10 @@ class Bann:
                             koma_on_event_position.exist = False
 
                     self.activated_koma.setPosition((x, y))
+                    nari = self.activated_koma.nari()
+                    if nari != 0:
+                        self.activated_koma.exist = False
+                        self.koma_list.append(nari)
                     self.activated_koma = None
 
                     # Update player.
@@ -232,11 +236,13 @@ class Bann:
 
 
 class Koma:
-    def __init__(self, path, size, position, player_id, exist):
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
         self._img = Image.open(path).resize((size, size))
+        self.size = size
         self.position = position
         self.player_id = player_id
         self.exist = exist
+        self.nari_flag = nari_flag
 
     def getImage(self):
         return self._img
@@ -253,10 +259,13 @@ class Koma:
     def movable(self, nextpos_x, nextpos_y):
         raise NotImplementedError
 
+    def nari(self):
+        raise NotImplementedError
+
 
 class Hira(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -265,10 +274,23 @@ class Hira(Koma):
         else:
             return False
 
+    def nari(self):
+        if self.nari_flag:
+            return 0
+
+        if self.getPlayerID() == 1 and self.getPosition()[1] <= 2:
+            path = Path("./images/koma/syuninn_u.png")
+            return Syuninn(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        elif self.getPlayerID() == -1 and self.getPosition()[1] >= 6:
+            path = Path("./images/koma/syuninn_ug.png")
+            return Syuninn(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        else:
+            return 0
+
 
 class Syuninn(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -279,10 +301,23 @@ class Syuninn(Koma):
         else:
             return False
 
+    def nari(self):
+        if self.nari_flag:
+            return 0
+
+        if self.getPlayerID() == 1 and self.getPosition()[1] <= 2:
+            path = Path("./images/koma/kakaricho_u.png")
+            return Kakaricho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        elif self.getPlayerID() == -1 and self.getPosition()[1] >= 6:
+            path = Path("./images/koma/kakaricho_ug.png")
+            return Kakaricho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        else:
+            return 0
+
 
 class Kakaricho(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -295,10 +330,23 @@ class Kakaricho(Koma):
         else:
             return False
 
+    def nari(self):
+        if self.nari_flag:
+            return 0
+
+        if self.getPlayerID() == 1 and self.getPosition()[1] <= 2:
+            path = Path("./images/koma/kacho_u.png")
+            return Kacho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        elif self.getPlayerID() == -1 and self.getPosition()[1] >= 6:
+            path = Path("./images/koma/kacho_ug.png")
+            return Kacho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        else:
+            return 0
+
 
 class Kacho(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -309,10 +357,23 @@ class Kacho(Koma):
         else:
             return False
 
+    def nari(self):
+        if self.nari_flag:
+            return 0
+
+        if self.getPlayerID() == 1 and self.getPosition()[1] <= 2:
+            path = Path("./images/koma/bucho_u.png")
+            return Bucho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        elif self.getPlayerID() == -1 and self.getPosition()[1] >= 6:
+            path = Path("./images/koma/bucho_ug.png")
+            return Bucho(path, self.size, self.getPosition(), self.getPlayerID(), self.exist, True)
+        else:
+            return 0
+
 
 class Bucho(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -325,10 +386,13 @@ class Bucho(Koma):
         else:
             return False
 
+    def nari(self):
+        return 0
+
 
 class Shacho(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -339,10 +403,13 @@ class Shacho(Koma):
         else:
             return False
 
+    def nari(self):
+        return 0
+
 
 class Honnbucho(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -351,10 +418,13 @@ class Honnbucho(Koma):
         else:
             return False
 
+    def nari(self):
+        return 0
+
 
 class Yakuinn(Koma):
-    def __init__(self, path, size, position, player_id, exist):
-        super().__init__(path, size, position, player_id, exist)
+    def __init__(self, path, size, position, player_id, exist, nari_flag):
+        super().__init__(path, size, position, player_id, exist, nari_flag)
 
     def movable(self, nextpos_x, nextpos_y):
         currentpos_x, currentpos_y = self.getPosition()
@@ -364,3 +434,6 @@ class Yakuinn(Koma):
             return True
         else:
             return False
+
+    def nari(self):
+        return 0
