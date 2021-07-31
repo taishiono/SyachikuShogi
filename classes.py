@@ -43,26 +43,26 @@ class Bann:
             Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (7, 7), 1, exist=True),
             Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 8), 1, exist=True),
             # ----------------------------- #
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (0, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (1, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (2, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (3, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (4, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (5, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (6, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (7, 2), -1, exist=True),
-            Hira(Path("./images/koma/hira_o.png"), masu_size, (8, 2), -1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (0, 0), -1, exist=True),
-            Syuninn(Path("./images/koma/syuninn_o.png"), masu_size, (8, 0), -1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (1, 0), -1, exist=True),
-            Kakaricho(Path("./images/koma/kakaricho_o.png"), masu_size, (7, 0), -1, exist=True),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (2, 0), -1, exist=True),
-            Kacho(Path("./images/koma/kacho_o.png"), masu_size, (6, 0), -1, exist=True),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (3, 0), -1, exist=True),
-            Bucho(Path("./images/koma/bucho_o.png"), masu_size, (5, 0), -1, exist=True),
-            Honnbucho(Path("./images/koma/honbucho_o.png"), masu_size, (7, 1), -1, exist=True),
-            Yakuinn(Path("./images/koma/yakuin_o.png"), masu_size, (1, 1), -1, exist=True),
-            Shacho(Path("./images/koma/syacho_o.png"), masu_size, (4, 0), -1, exist=True)
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (0, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (1, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (2, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (3, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (4, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (5, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (6, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (7, 2), -1, exist=True),
+            Hira(Path("./images/koma/hira_og.png"), masu_size, (8, 2), -1, exist=True),
+            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (0, 0), -1, exist=True),
+            Syuninn(Path("./images/koma/syuninn_og.png"), masu_size, (8, 0), -1, exist=True),
+            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (1, 0), -1, exist=True),
+            Kakaricho(Path("./images/koma/kakaricho_og.png"), masu_size, (7, 0), -1, exist=True),
+            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (2, 0), -1, exist=True),
+            Kacho(Path("./images/koma/kacho_og.png"), masu_size, (6, 0), -1, exist=True),
+            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (3, 0), -1, exist=True),
+            Bucho(Path("./images/koma/bucho_og.png"), masu_size, (5, 0), -1, exist=True),
+            Honnbucho(Path("./images/koma/honbucho_og.png"), masu_size, (7, 1), -1, exist=True),
+            Yakuinn(Path("./images/koma/yakuin_og.png"), masu_size, (1, 1), -1, exist=True),
+            Shacho(Path("./images/koma/syacho_og.png"), masu_size, (4, 0), -1, exist=True)
         ]
 
         # Initialize match.
@@ -126,16 +126,17 @@ class Bann:
             return 0, 0
         else:
             x, y = int(event.x / step), int(event.y / step)
-            if self.activated_koma is None:
-                for koma in self.koma_list:
-                    koma_x, koma_y = koma.getPosition()
-                    if x == koma_x and y == koma_y and self.current_player == koma.getPlayerID():
-                        self.activated_koma = koma
+            koma_on_event_position = self.get_koma_by_position(x, y)
 
+            if self.activated_koma is None:
+                if koma_on_event_position is not None and koma_on_event_position.getPlayerID() == self.current_player:
+                    self.activated_koma = koma_on_event_position
                 return 0, 0
             else:
                 if self.activated_koma.movable(x, y):
                     if isinstance(self.activated_koma, (Honnbucho, Yakuinn)):
+                        # Honnbucho and Yakuinn need to be examined if there's koma or not on the way to
+                        # their destinations.
                         current_x, current_y = self.activated_koma.getPosition()
                         vec = [x - current_x, y - current_y]
                         vec = self.normalizeVec(vec)
@@ -150,33 +151,26 @@ class Bann:
                             tmp_x += vec[0]
                             tmp_y += vec[1]
 
-                    if self.get_koma_by_position(x, y) is None:
-                        self.activated_koma.setPosition((x, y))
-                        self.activated_koma = None
-
-                        # Change player
-                        player_tmp = self.current_player
-                        self.current_player = - player_tmp
-                        print("Player {}'s turn!".format(self.current_player))
-
-                        updated_bann = self.get_current_bann_img()
-                        return 1, updated_bann
-                    elif self.get_koma_by_position(x, y).getPlayerID() == - self.current_player:
-                        self.get_koma_by_position(x, y).exist = False
-
-                        self.activated_koma.setPosition((x, y))
-                        self.activated_koma = None
-
-                        # Change player
-                        player_tmp = self.current_player
-                        self.current_player = - player_tmp
-                        print("Player {}'s turn!".format(self.current_player))
-
-                        updated_bann = self.get_current_bann_img()
-                        return 1, updated_bann
-                    else:
+                    if koma_on_event_position is None:
+                        pass
+                    elif koma_on_event_position.getPlayerID() == self.current_player:
+                        # Current player's koma is occupying the destination.
                         self.activated_koma = None
                         return 0, 0
+                    elif koma_on_event_position.getPlayerID() == - self.current_player:
+                        # Next player's koma is occupying the destination.
+                        self.get_koma_by_position(x, y).exist = False
+
+                    self.activated_koma.setPosition((x, y))
+                    self.activated_koma = None
+
+                    # Update player.
+                    player_tmp = self.current_player
+                    self.current_player = - player_tmp
+                    print("Player {}'s turn!".format(self.current_player))
+                    # Update bann.
+                    updated_bann = self.get_current_bann_img()
+                    return 1, updated_bann
 
                 else:
                     self.activated_koma = None
