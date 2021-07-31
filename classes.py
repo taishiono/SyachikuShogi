@@ -119,14 +119,27 @@ class Bann:
                 return koma
         return None
 
+    def winner_check(self):
+        shacho_1, shacho_2 = False, False
+        for koma in self.koma_list:
+            if koma.exist and isinstance(koma, Shacho):
+                if koma.getPlayerID() == 1:
+                    shacho_1 = True
+                elif koma.getPlayerID() == -1:
+                    shacho_2 = True
+        return shacho_1 & shacho_2
+
     def key_event_handler(self, event):
         """
         :param event:
         :return:
             When nothing happened: (0, 0)
-            When bann is updated,: (1, bann_img(numpy.ndarray))
-            When someone wins: (2, winner's ID(int))
+            When someone wins: (winner's ID(1 or -1), bann_img(numpy.ndarray))
+            When bann is updated,: (2, bann_img(numpy.ndarray))
         """
+        if not self.winner_check():  # A player's shacho is missing.
+            return 0, 0
+
         step = self._masu_size + self._line_size
 
         if event.x % step <= self._line_size or event.y % step <= self._line_size:  # Event position is on the lines.
@@ -167,7 +180,11 @@ class Bann:
                     elif koma_on_event_position.getPlayerID() == - self.current_player:
                         # Next player's koma is occupying the destination.
                         if isinstance(koma_on_event_position, Shacho):
-                            return 2, - koma_on_event_position.getPlayerID()
+                            koma_on_event_position.exist = False
+                            self.activated_koma.setPosition((x, y))
+                            self.activated_koma = None
+                            updated_bann = self.get_current_bann_img()
+                            return - koma_on_event_position.getPlayerID(), updated_bann
                         else:
                             koma_on_event_position.exist = False
 
@@ -180,7 +197,7 @@ class Bann:
                     print("Player {}'s turn!".format(self.current_player))
                     # Update bann.
                     updated_bann = self.get_current_bann_img()
-                    return 1, updated_bann
+                    return 2, updated_bann
 
                 else:
                     self.activated_koma = None

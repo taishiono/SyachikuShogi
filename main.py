@@ -23,11 +23,14 @@ def ButtonPress1(event):
     global wait_finish
 
     a = bann.key_event_handler(event)
-    if a[0] == 1:
+    if a[0] == 2:
         img_new = ImageTk.PhotoImage(image=Image.fromarray(a[1]))
         canvas.itemconfig(img_on_campus, image=img_new)
-    elif a[0] == 2:
-        label = tk.Label(root, text="Player {} Win!".format(a[1]))
+    elif a[0] == 1 or a[0] == -1:
+        img_new = ImageTk.PhotoImage(image=Image.fromarray(a[1]))
+        canvas.itemconfig(img_on_campus, image=img_new)
+
+        label = tk.Label(root, text="Player {} Win!".format(a[0]))
         label.pack()
         button = tk.Button(root, text="Finish Game?", command=clk)
         button.pack()
