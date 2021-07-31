@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daf496d0-fc0e-4f15-870a-638b22c145cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/taishi_o.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SyachikuShogi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SyachikuShogi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="daf496d0-fc0e-4f15-870a-638b22c145cf" name="Default Changelist" comment="blank">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.img_tmp">
     <configuration name="ban_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SyachikuShogi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,6 +47,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ban_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="img_tmp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SyachikuShogi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/img_tmp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.img_tmp" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.ban_generator" />
       </list>
@@ -110,35 +130,162 @@
       <option name="project" value="LOCAL" />
       <updated>1627095661035</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="All komas are tentatively implemented.Turn system is implemented.">
+      <created>1627297134630</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1627297134630</updated>
+    </task>
+    <task id="LOCAL-00004" summary="koma toru system is implemented.">
+      <created>1627301812971</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1627301812971</updated>
+    </task>
+    <task id="LOCAL-00005" summary="yakuinn movable function is updated.">
+      <created>1627305934157</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1627305934157</updated>
+    </task>
+    <task id="LOCAL-00006" summary="movable is modified.">
+      <created>1627308751692</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1627308751692</updated>
+    </task>
+    <task id="LOCAL-00007" summary="movable is modified.">
+      <created>1627309796349</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1627309796349</updated>
+    </task>
+    <task id="LOCAL-00008" summary="function name changed.">
+      <created>1627659821035</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1627659821035</updated>
+    </task>
+    <task id="LOCAL-00009" summary="blank line deleted.">
+      <created>1627659885760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1627659885760</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Koma class is changed not to care other Komas.">
+      <created>1627702960328</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1627702960329</updated>
+    </task>
+    <task id="LOCAL-00011" summary="koma move and koma remove are implemented.">
+      <created>1627714451143</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1627714451143</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new koma imgs are added.">
+      <created>1627715035204</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1627715035204</updated>
+    </task>
+    <task id="LOCAL-00013" summary="exist flag is added to Koma class.">
+      <created>1627717235970</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1627717235970</updated>
+    </task>
+    <task id="LOCAL-00014" summary="typo fixed">
+      <created>1627717385179</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1627717385180</updated>
+    </task>
+    <task id="LOCAL-00015" summary="When Shacho is removed from bann, show which player wins.">
+      <created>1627719345491</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1627719345491</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update bann when Shacho is removed as well, and winner_check method is implemented for preventing player from acting even after match finishes.">
+      <created>1627720282948</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1627720282948</updated>
+    </task>
+    <task id="LOCAL-00017" summary="nari function is implemented.">
+      <created>1627732720497</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1627732720497</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Readme is added. &quot;How to play&quot; section is not written yet.">
+      <created>1627733388873</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1627733388873</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="numpy and opencv-python were installed." />
     <MESSAGE value="Pillow is installed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pillow is installed." />
+    <MESSAGE value="All komas are tentatively implemented.Turn system is implemented." />
+    <MESSAGE value="koma toru system is implemented." />
+    <MESSAGE value="yakuinn movable function is updated." />
+    <MESSAGE value="movable is modified." />
+    <MESSAGE value="function name changed." />
+    <MESSAGE value="blank line deleted." />
+    <MESSAGE value="Koma class is changed not to care other Komas." />
+    <MESSAGE value="koma move and koma remove are implemented." />
+    <MESSAGE value="new koma imgs are added." />
+    <MESSAGE value="exist flag is added to Koma class." />
+    <MESSAGE value="typo fixed" />
+    <MESSAGE value="When Shacho is removed from bann, show which player wins." />
+    <MESSAGE value="Update bann when Shacho is removed as well, and winner_check method is implemented for preventing player from acting even after match finishes." />
+    <MESSAGE value="nari function is implemented." />
+    <MESSAGE value="Readme is added. &quot;How to play&quot; section is not written yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme is added. &quot;How to play&quot; section is not written yet." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="437" y="300" width="906" height="807" key="CommitChangelistDialog2" timestamp="1627095660539">
+    <state x="223" y="0" width="1415" height="1260" key="CommitChangelistDialog2" timestamp="1627733388179">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="437" y="300" width="906" height="807" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1627095660539" />
-    <state width="1534" height="400" key="GridCell.Tab.0.bottom" timestamp="1627114334207">
+    <state x="223" y="0" width="1415" height="1260" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1627733388179" />
+    <state width="1968" height="400" key="GridCell.Tab.0.bottom" timestamp="1627714925111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1534" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1627114334207" />
-    <state width="1534" height="400" key="GridCell.Tab.0.center" timestamp="1627114334207">
+    <state width="1968" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1627714925111" />
+    <state width="1968" height="400" key="GridCell.Tab.0.center" timestamp="1627714925111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1534" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1627114334207" />
-    <state width="1534" height="400" key="GridCell.Tab.0.left" timestamp="1627114334207">
+    <state width="1968" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1627714925111" />
+    <state width="1968" height="400" key="GridCell.Tab.0.left" timestamp="1627714925110">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1534" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1627114334207" />
-    <state width="1534" height="400" key="GridCell.Tab.0.right" timestamp="1627114334207">
+    <state width="1968" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1627714925110" />
+    <state width="1968" height="400" key="GridCell.Tab.0.right" timestamp="1627714925111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1534" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1627114334207" />
+    <state width="1968" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1627714925111" />
     <state x="287" y="346" key="SettingsEditor" timestamp="1627094613319">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
