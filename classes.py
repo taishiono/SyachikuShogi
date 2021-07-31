@@ -121,13 +121,20 @@ class Bann:
 
     def winner_check(self):
         shacho_1, shacho_2 = False, False
+        bucho_1, bucho_2 = False, False
         for koma in self.koma_list:
             if koma.exist and isinstance(koma, Shacho):
                 if koma.getPlayerID() == 1:
                     shacho_1 = True
                 elif koma.getPlayerID() == -1:
                     shacho_2 = True
-        return shacho_1 & shacho_2
+            if koma.exist and isinstance(koma, Bucho):
+                if koma.getPlayerID() == 1:
+                    bucho_1 = True
+                elif koma.getPlayerID() == -1:
+                    bucho_2 = True
+
+        return shacho_1 & shacho_2 & bucho_1 & bucho_2
 
     def key_event_handler(self, event):
         """
@@ -179,14 +186,18 @@ class Bann:
                         return 0, 0
                     elif koma_on_event_position.getPlayerID() == - self.current_player:
                         # Next player's koma is occupying the destination.
+                        koma_on_event_position.exist = False
                         if isinstance(koma_on_event_position, Shacho):
-                            koma_on_event_position.exist = False
                             self.activated_koma.setPosition((x, y))
                             self.activated_koma = None
                             updated_bann = self.get_current_bann_img()
                             return - koma_on_event_position.getPlayerID(), updated_bann
-                        else:
-                            koma_on_event_position.exist = False
+                        elif isinstance(koma_on_event_position, Bucho):
+                            if not self.winner_check():
+                                self.activated_koma.setPosition((x, y))
+                                self.activated_koma = None
+                                updated_bann = self.get_current_bann_img()
+                                return - koma_on_event_position.getPlayerID(), updated_bann
 
                     self.activated_koma.setPosition((x, y))
                     nari = self.activated_koma.nari()
