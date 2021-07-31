@@ -159,7 +159,7 @@ class Bann:
                         return 0, 0
                     elif koma_on_event_position.getPlayerID() == - self.current_player:
                         # Next player's koma is occupying the destination.
-                        self.get_koma_by_position(x, y).exist = False
+                        koma_on_event_position.exist = False
 
                     self.activated_koma.setPosition((x, y))
                     self.activated_koma = None
