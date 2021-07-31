@@ -120,6 +120,13 @@ class Bann:
         return None
 
     def key_event_handler(self, event):
+        """
+        :param event:
+        :return:
+            When nothing happened: (0, 0)
+            When bann is updated,: (1, bann_img(numpy.ndarray))
+            When someone wins: (2, winner's ID(int))
+        """
         step = self._masu_size + self._line_size
 
         if event.x % step <= self._line_size or event.y % step <= self._line_size:  # Event position is on the lines.
@@ -159,7 +166,10 @@ class Bann:
                         return 0, 0
                     elif koma_on_event_position.getPlayerID() == - self.current_player:
                         # Next player's koma is occupying the destination.
-                        koma_on_event_position.exist = False
+                        if isinstance(koma_on_event_position, Shacho):
+                            return 2, - koma_on_event_position.getPlayerID()
+                        else:
+                            koma_on_event_position.exist = False
 
                     self.activated_koma.setPosition((x, y))
                     self.activated_koma = None
